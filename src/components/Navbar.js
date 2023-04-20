@@ -10,12 +10,13 @@ const Navbar = () => {
 
           <Menu>
                <MenuButton
+                    display={{base: 'block', md: 'block', lg: 'none'}}
                     as={IconButton}
                     aria-label='Options'
                     icon={<HamburgerIcon />}
                     variant='outline'
                />
-               <MenuList h='100vh' pos='sticky' left='0' zIndex='10'>
+               <MenuList display={{base: 'block', md: 'block', lg: 'none'}} h='100vh' pos='sticky' left='0' zIndex='10'>
                     <MenuItem icon={<AddIcon />} command='⌘T'>
                          New Tab
                     </MenuItem>

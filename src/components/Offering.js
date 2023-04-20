@@ -26,8 +26,8 @@ const Offering = () => {
                <Text marginTop= '20px' textAlign='center'>This Real Estate purchase journey can be divided into three stages. For more details, Click Here</Text>
           </Box>
 
-          <Flex flexWrap='wrap' alignItems='center' gap='20px' marginTop='35px'>
-               <Flex justifyContent='center' alignItems='center' bgColor='#F2F4F6' height='100px' width='467px'>
+          <Flex flexWrap='wrap' alignItems='center' justifyContent='center' gap='20px' marginTop='35px'>
+               <Flex justifyContent='center' alignItems='center' bgColor='#F2F4F6' height='100px' width={['100px', '200px', '330px']}>
                     <Text borderRadius='50%' padding='15px 20px' marginRight='20px' bgColor='#fff'>1</Text>
                     <Text>Pre-Booking</Text>
                </Flex>
