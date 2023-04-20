@@ -32,12 +32,12 @@ const Offering = () => {
                     <Text>Pre-Booking</Text>
                </Flex>
 
-               <Flex justifyContent='center' alignItems='center' bgColor='#F2F4F6' height='100px' width='467px'>
+               <Flex justifyContent='center' alignItems='center' bgColor='#F2F4F6' height='100px' width={['100px', '200px', '330px']}>
                     <Text borderRadius='50%' padding='15px 20px' marginRight='20px' bgColor='#fff'>2</Text>
-                    <Text>Post-Booking & Pre-Registration</Text>
+                    <Text noOfLines='2'>Post-Booking & <br/>Pre-Registration</Text>
                </Flex>
 
-               <Flex justifyContent='center' alignItems='center' bgColor='#F2F4F6' height='100px' width='467px'>
+               <Flex justifyContent='center' alignItems='center' bgColor='#F2F4F6' height='100px' width={['100px', '200px', '330px']}>
                     <Text borderRadius='50%' padding='15px 20px' marginRight='20px' bgColor='#fff'>3</Text>
                     <Text>Post-Registration </Text>
                </Flex>
