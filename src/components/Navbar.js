@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
        
        
-    <Flex  p='10px 0' borderBottom='1px' borderColor='lightgray'  boxShadow='base'>
+    <Flex  borderBottom='1px' borderColor='lightgray'  boxShadow='base'>
        <Container display='flex' justifyContent='space-between' alignItems='center' maxW={['fit-content', null, '1300px']}>
 
           <Menu>
@@ -41,10 +41,10 @@ const Navbar = () => {
           <Flex display={{base: 'none', md: 'none', lg: 'block'}}>
                {
                     links.map((link) => (
-                         <Link padding="10px" marginRight="30px">{link}</Link>
+                         <Link className='nav-links' textDecoration='none' transition='.2s all ease' _hover={{borderBottom: '2px solid #000'}} display='inline-block' padding="20px 10px" marginRight="30px">{link}</Link>
                     ))
                }
-               <Button colorScheme='blue'>Register Now</Button>
+               <Button color='white' bg='primary'>Register Now</Button>
           </Flex>
     </Container>
     </Flex>

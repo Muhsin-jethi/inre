@@ -29,7 +29,7 @@ const Cards = ({card: {image, text, headText, date, pos, author}}) => {
                 <Text color='#bbb'>{pos}</Text>
               }
          </Box>
-         <Text padding='10px 0'>
+         <Text color='#1a1a1a' opacity='0.6' fontSize='16px' padding='10px 0'>
                {text}
          </Text>
        </Stack>

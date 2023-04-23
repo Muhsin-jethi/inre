@@ -1,24 +1,51 @@
-import { Box, Flex, Heading, Text } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Card, Flex, Heading, Text } from '@chakra-ui/react'
+import React, { useState, useEffect } from 'react'
 import Cards from './Cards'
 
 import Image_2 from '../assets/images/image-2.png'
 import Image_3 from '../assets/images/image-3.png'
+import '../styles/style.css'
 
-const Offering = () => {
+
+const Offering = (item) => {
+     const [activeMenu, setActiveMenu] = useState('Pre-Booking')
+     const [contentOffering, setContentOffering] = useState([])
+
+     useEffect(() => {
+          setContentOffering(offeringsCard.filter((card) => card.category === 'Pre-Booking'))
+     }, [])
+
+     const handleClick = function(item){
+          setActiveMenu(item)
+          setTimeout(()=>{
+               setContentOffering(offeringsCard.filter((card) =>  card.category === activeMenu))
+           
+          }, 100)
+     }
+     
+
 
      const offeringsCard = [
           {
+               headText: 'Background Verification',
+               image: `${Image_2}`,
+               text: 'We provide personalized verification reports on project and developer credibility to empower clients in making informed decisions.',
+               category: 'Pre-Booking',
+     },
+     {
           headText: 'Background Verification',
           image: `${Image_2}`,
           text: 'We provide personalized verification reports on project and developer credibility to empower clients in making informed decisions.',
-     },
+          category: 'Pre-Booking',
+},
      {
           headText: 'Virtual Site Visit',
           image: `${Image_3}`,
-          text: "Our AI-powered unmanned aerial vehicle (UAV) system provides meticulous examination of your property. Simply provide date and time, and we'll provide live streaming and recordings."
+          text: "Our AI-powered unmanned aerial vehicle (UAV) system provides meticulous examination of your property. Simply provide date and time, and we'll provide live streaming and recordings.",
+          category: 'Post-Registration',
      },
 ]
+
   return (
     <Box marginBottom='35px'>
           <Box>
@@ -27,26 +54,20 @@ const Offering = () => {
           </Box>
 
           <Flex flexWrap='wrap' alignItems='center' justifyContent='center' gap='20px' marginTop='35px'>
-               <Flex justifyContent='center' alignItems='center' bgColor='#F2F4F6' height='100px' width={['100px', '200px', '330px']}>
-                    <Text borderRadius='50%' padding='15px 20px' marginRight='20px' bgColor='#fff'>1</Text>
-                    <Text>Pre-Booking</Text>
-               </Flex>
-
-               <Flex justifyContent='center' alignItems='center' bgColor='#F2F4F6' height='100px' width={['100px', '200px', '330px']}>
-                    <Text borderRadius='50%' padding='15px 20px' marginRight='20px' bgColor='#fff'>2</Text>
-                    <Text noOfLines='2'>Post-Booking & <br/>Pre-Registration</Text>
-               </Flex>
-
-               <Flex justifyContent='center' alignItems='center' bgColor='#F2F4F6' height='100px' width={['100px', '200px', '330px']}>
-                    <Text borderRadius='50%' padding='15px 20px' marginRight='20px' bgColor='#fff'>3</Text>
-                    <Text>Post-Registration </Text>
-               </Flex>
+               {
+                    ['Pre-Booking', 'Post-Booking & Pre-Registration', 'Post-Registration'].map((item) => (
+                         <Flex className={`${activeMenu === item? 'active': ''}`} justifyContent='center' cursor='pointer' alignItems='center' bgColor='#F2F4F6' height='100px' width={['100px', '270px', '370px']} onClick={()=>handleClick(item)}>
+                         <Text borderRadius='50%' padding='15px 20px' marginRight='20px' bgColor='#fff'>1</Text>
+                         <Text>{item}</Text>
+                         </Flex>
+                    ))
+               }
 
           </Flex>
                <Flex justifyContent='center' color='blue.100' flexWrap='wrap' gap='30px' marginTop='70px'>
                     {
-                         offeringsCard.map((card) => (
-                              <Cards card = {card} />
+                         contentOffering.map((item) => (
+                              <Cards card={item}/>
                          ))
                     }
                </Flex>

@@ -1,4 +1,4 @@
-import { Box, Flex, Image, List, ListItem, ListIcon, Heading, Text, Link  } from '@chakra-ui/react'
+import { Box, Flex, Image, List, ListItem, ListIcon, Heading, Text, Link, Container  } from '@chakra-ui/react'
 import React from 'react'
 import { ArrowForwardIcon,EmailIcon, PhoneIcon } from '@chakra-ui/icons'
 import LogoWhite from '../assets/images/logowhite.png'
@@ -6,32 +6,29 @@ import {AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin} from 'react-ic
 
 const Footer = () => {
   return (
-    <div style={{marginTop: '70px', backgroundColor: '#002550', color: '#fff', paddingTop: '30px'}}>
+    <Box bg='primary' style={{marginTop: '70px', color: '#fff', padding: '30px 30px 0'}}>
+      <Container maxW={['fit-content', null, '1300px']}>
         <Flex flexWrap='wrap' justifyContent='space-between'>
-            <Box>
+            <Link>
               <Image  boxSize='70px' src={LogoWhite} size='sm'/>
-            </Box> 
+            </Link> 
 
             <Box>
                 <Heading size='md' marginBottom='20px'>Company</Heading>
 
                 <List color='#ccc'  spacing={6}>
                   <ListItem>
-                    <ListIcon as={ArrowForwardIcon} color='#ccc' />
-                      Home
+                    <Link>Home</Link>
                   </ListItem>
                   <ListItem>
-                    <ListIcon as={ArrowForwardIcon} color='#ccc' />
-                      Our offerings
+                      <Link>Our offerings</Link>
                   </ListItem>
                   <ListItem>
-                    <ListIcon as={ArrowForwardIcon} color='#ccc' />
-                      Our Team
+                  <Link>Our Team</Link>
                   </ListItem>
                   {/* You can also use custom icons from react-icons */}
                   <ListItem>
-                    <ListIcon as={ArrowForwardIcon} color='#fff' />
-                        Contact Us
+                        <Link>Contact Us</Link>
                   </ListItem>
                 </List>
             </Box>
@@ -41,11 +38,11 @@ const Footer = () => {
 
                 <List spacing={6}>
                   <ListItem color='#ccc' >
-                    <ListIcon as={ArrowForwardIcon} color='#ccc' />
+                  
                       Blogs
                   </ListItem>
                   <ListItem color='#ccc' >
-                    <ListIcon as={ArrowForwardIcon} color='#ccc' />
+                  
                       FAQs
                   </ListItem>
                 </List>
@@ -77,7 +74,7 @@ const Footer = () => {
             </Box>
         </Flex>
 
-        <Flex justifyContent='space-between' padding='40px 0 20px'>
+        <Flex flexWrap='wrap' justifyContent='space-between' padding='40px 0 20px'>
           <Text>Copyright 2023. Designed by INRE Global</Text>
           <Flex gap='30px'>
           <Link href='https://chakra-ui.com' isExternal display='flex'  gap='20px'>
@@ -93,7 +90,8 @@ const Footer = () => {
           </Link>
           </Flex>
         </Flex>
-    </div>
+      </Container>
+    </Box>
   )
 }
 
