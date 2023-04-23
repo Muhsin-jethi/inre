@@ -7,7 +7,7 @@ const Contact = () => {
     <Box>
           <Heading margin='35px auto 30px' width='fit-content' borderBottom='5px solid black'>Contact Us</Heading>
 
-          <Flex justifyContent='space-between'>
+          <Flex justifyContent='space-between' flexWrap={{base: 'wrap', md: 'nowrap', lg: 'nowrap'}}>
               <Box className=''>
                 <Heading as='h4' fontSize='lg'>Please provide below details</Heading>
                 <form style={{flex: '1', margin: '40px 0', gap: '20px', display: 'flex', flexWrap: 'wrap'}}>
@@ -16,12 +16,12 @@ const Contact = () => {
                   <Input type='text' />
                 </FormControl>
 
-                <FormControl width={['200px', '300px', '320px']} isRequired>
+                <FormControl width={['full', '300px', '320px']} isRequired>
                   <FormLabel>Email address</FormLabel>
                   <Input type='email' />
                 </FormControl>
 
-                <FormControl width={['200px', '300px', '320px']}>
+                <FormControl width={['full', '300px', '320px']}>
                 <FormLabel>Country</FormLabel>
                 <Select placeholder='Select country'>
                   <option>United Arab Emirates</option>
@@ -29,7 +29,7 @@ const Contact = () => {
                 </Select>
                 </FormControl>
 
-                <FormControl width={['200px', '300px', '320px']}>
+                <FormControl width={['full', '300px', '320px']}>
                 <FormLabel>Stages</FormLabel>
                 <Select placeholder='Select country'>
                   <option>United Arab Emirates</option>
@@ -42,13 +42,13 @@ const Contact = () => {
                   colorScheme='teal'
                   bg='primary'
                   type='submit'
-                  w={['fit-content', '200px', '320px']}
+                  w={['full', '200px', '320px']}
                 >
                    Submit
                 </Button>
                 </form>
               </Box>
-              <Image src={ContactImage} />
+              <Image flex='1' src={ContactImage} />
           </Flex>
 
           

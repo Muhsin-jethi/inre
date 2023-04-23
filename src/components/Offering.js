@@ -17,10 +17,8 @@ const Offering = (item) => {
 
      const handleClick = function(item){
           setActiveMenu(item)
-          setTimeout(()=>{
-               setContentOffering(offeringsCard.filter((card) =>  card.category === activeMenu))
-           
-          }, 100)
+          console.log(contentOffering)
+          setContentOffering(offeringsCard.filter(item => item.category.includes(activeMenu)))
      }
      
 
@@ -55,9 +53,9 @@ const Offering = (item) => {
 
           <Flex flexWrap='wrap' alignItems='center' justifyContent='center' gap='20px' marginTop='35px'>
                {
-                    ['Pre-Booking', 'Post-Booking & Pre-Registration', 'Post-Registration'].map((item) => (
+                    ['Pre-Booking', 'Post-Booking & Pre-Registration', 'Post-Registration'].map((item, index) => (
                          <Flex className={`${activeMenu === item? 'active': ''}`} justifyContent='center' cursor='pointer' alignItems='center' bgColor='#F2F4F6' height='100px' width={['100px', '270px', '370px']} onClick={()=>handleClick(item)}>
-                         <Text borderRadius='50%' padding='15px 20px' marginRight='20px' bgColor='#fff'>1</Text>
+                         <Text borderRadius='50%' padding='15px 20px' marginRight='20px' bgColor='#fff'>{index + 1}</Text>
                          <Text>{item}</Text>
                          </Flex>
                     ))

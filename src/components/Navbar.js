@@ -9,7 +9,7 @@ const Navbar = () => {
        
        
     <Flex  borderBottom='1px' borderColor='lightgray'  boxShadow='base'>
-       <Container display='flex' justifyContent='space-between' alignItems='center' maxW={['fit-content', null, '1300px']}>
+       <Container display='flex' justifyContent='space-between' alignItems='center' maxW={['full', null, '1300px']}>
 
           <Menu>
                <MenuButton
