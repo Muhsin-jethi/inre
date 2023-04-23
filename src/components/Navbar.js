@@ -9,7 +9,7 @@ const Navbar = () => {
        
        
     <Flex  borderBottom='1px' borderColor='lightgray'  boxShadow='base'>
-       <Container display='flex' justifyContent='space-between' alignItems='center' maxW={['full', null, '1300px']}>
+       <Container display='flex' padding={['10px', '0px', '0']} justifyContent='space-between' alignItems='center' maxW={['full', null, '1300px']}>
 
           <Menu>
                <MenuButton
@@ -20,22 +20,18 @@ const Navbar = () => {
                     variant='outline'
                />
                <MenuList display={{base: 'block', md: 'block', lg: 'none'}} h='100vh' pos='sticky' left='0' zIndex='10'>
-                    <MenuItem icon={<AddIcon />} command='⌘T'>
-                         New Tab
+               {
+                    links.map((link) => (
+                         <MenuItem>
+                          <Link className='nav-links' textDecoration='none' transition='.2s all ease' _hover={{borderBottom: '2px solid #000'}} display='inline-block' padding="20px 10px" marginRight="30px">{link}</Link>
                     </MenuItem>
-                    <MenuItem icon={<ExternalLinkIcon />} command='⌘N'>
-                         New Window
-                    </MenuItem>
-                    <MenuItem icon={<RepeatIcon />} command='⌘⇧N'>
-                         Open Closed Tab
-                    </MenuItem>
-                    <MenuItem icon={<EditIcon />} command='⌘O'>
-                         Open File...
-                    </MenuItem>
+                        
+                    ))
+               }
                </MenuList>
           </Menu>
           <Box>
-               <Image w={['30px', '40px', '50px']} src={Logo}/>
+               <Image w={['40px', '50px', '55px']} src={Logo}/>
           </Box>
 
           <Flex display={{base: 'none', md: 'none', lg: 'block'}}>
@@ -44,8 +40,8 @@ const Navbar = () => {
                          <Link className='nav-links' textDecoration='none' transition='.2s all ease' _hover={{borderBottom: '2px solid #000'}} display='inline-block' padding="20px 10px" marginRight="30px">{link}</Link>
                     ))
                }
-               <Button color='white' bg='primary'>Register Now</Button>
           </Flex>
+               <Button color='white' transition='.3s all ease' _hover={{opacity: '0.8', transform: 'scale(1.02)'}} padding={['1px 10px', '20px', '30px']} fontSize={['12px', '20px', 'lg']} bg='primary'>Register Now</Button>
     </Container>
     </Flex>
   )
