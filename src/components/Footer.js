@@ -8,9 +8,9 @@ const Footer = () => {
   return (
     <Box bg='primary' style={{marginTop: '70px', color: '#fff',}} padding={['30px 8px 0', '20px 20px 0', '30px 30px 0']}>
       <Container maxW={['fit-content', null, '1300px']}>
-        <Flex flexWrap='wrap' gap='20px' justifyContent='space-between'>
-            <Link>
-              <Image  boxSize='70px' src={LogoWhite} size='sm'/>
+        <Flex flexWrap='wrap' gap={['40px', '25px', '20px']} justifyContent='space-between'>
+            <Link width={['full', 'fit-content', 'fit-content']}>
+              <Image  boxSize={['45px', '50px', '70px']} margin={['0 auto', '0', '0']} src={LogoWhite} size='sm'/>
             </Link> 
 
             <Box>
