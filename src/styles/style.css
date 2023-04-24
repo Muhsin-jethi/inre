@@ -5,3 +5,8 @@
 .nav-links{
      
 }
+.btn{
+     border: 1px solid #002550;
+     color: #002550;
+     background: transparent;
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, Stack, CardBody, CardFooter, Image, Divider, Text, Heading, Box, Button, Icon, Flex } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
+import '../styles/style.css'
 
 const Cards = ({card: {image, text, headText, date, pos, author}}) => {
   console.log(image)
@@ -35,7 +36,7 @@ const Cards = ({card: {image, text, headText, date, pos, author}}) => {
        </Stack>
      </CardBody>
      <CardFooter>
-         <Button variant='outline' colorScheme='blue'>
+         <Button className='btn'>
            View More &nbsp;  <Icon as={ArrowForwardIcon} />
          </Button>
      </CardFooter>

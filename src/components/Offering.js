@@ -17,8 +17,8 @@ const Offering = (item) => {
 
      const handleClick = function(item){
           setActiveMenu(item)
+          setContentOffering(offeringsCard?.filter(item => item.category.includes(activeMenu)))
           console.log(contentOffering)
-          setContentOffering(offeringsCard.filter(item => item.category.includes(activeMenu)))
      }
      
 
@@ -47,14 +47,14 @@ const Offering = (item) => {
   return (
     <Box marginBottom='35px'>
           <Box>
-               <Heading margin='70px auto 0' paddingBottom='10px' width='fit-content' borderBottom='4px solid gray'>our offerings</Heading>
+               <Heading margin='70px auto 0' paddingBottom='10px' width='fit-content' borderBottom='4px solid' borderColor='primary' color='primary'>our offerings</Heading>
                <Text marginTop= '20px' textAlign='center'>This Real Estate purchase journey can be divided into three stages. For more details, Click Here</Text>
           </Box>
 
           <Flex flexWrap='wrap' alignItems='center' justifyContent='center' gap='20px' marginTop='35px'>
                {
                     ['Pre-Booking', 'Post-Booking & Pre-Registration', 'Post-Registration'].map((item, index) => (
-                         <Flex className={`${activeMenu === item? 'active': ''}`} justifyContent='center' cursor='pointer' alignItems='center' bgColor='#F2F4F6' height='100px' width={['100px', '270px', '370px']} onClick={()=>handleClick(item)}>
+                         <Flex className={`${activeMenu === item? 'active': ''}`} justifyContent='center' cursor='pointer' alignItems='center' bgColor='#F2F4F6' height='100px' width={['full', '270px', '370px']} onClick={()=>handleClick(item)}>
                          <Text borderRadius='50%' padding='15px 20px' marginRight='20px' bgColor='#fff'>{index + 1}</Text>
                          <Text>{item}</Text>
                          </Flex>
@@ -64,7 +64,7 @@ const Offering = (item) => {
           </Flex>
                <Flex justifyContent='center' color='blue.100' flexWrap='wrap' gap='30px' marginTop='70px'>
                     {
-                         contentOffering.map((item) => (
+                         contentOffering?.map((item) => (
                               <Cards card={item}/>
                          ))
                     }

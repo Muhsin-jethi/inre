@@ -11,7 +11,7 @@ const Contact = () => {
               <Box className=''>
                 <Heading as='h4' fontSize='lg'>Please provide below details</Heading>
                 <form style={{flex: '1', margin: '40px 0', gap: '20px', display: 'flex', flexWrap: 'wrap'}}>
-                <FormControl width={['fit-content', '250px', '302px']}>
+                <FormControl width={['full', '250px', '302px']}>
                   <FormLabel>Fullname</FormLabel>
                   <Input type='text' />
                 </FormControl>

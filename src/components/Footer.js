@@ -6,9 +6,9 @@ import {AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin} from 'react-ic
 
 const Footer = () => {
   return (
-    <Box bg='primary' style={{marginTop: '70px', color: '#fff', padding: '30px 30px 0'}}>
+    <Box bg='primary' style={{marginTop: '70px', color: '#fff',}} padding={['30px 8px 0', '20px 20px 0', '30px 30px 0']}>
       <Container maxW={['fit-content', null, '1300px']}>
-        <Flex flexWrap='wrap' justifyContent='space-between'>
+        <Flex flexWrap='wrap' gap='20px' justifyContent='space-between'>
             <Link>
               <Image  boxSize='70px' src={LogoWhite} size='sm'/>
             </Link> 
@@ -16,7 +16,7 @@ const Footer = () => {
             <Box>
                 <Heading size='md' marginBottom='20px'>Company</Heading>
 
-                <List color='#ccc'  spacing={6}>
+                <List color='#ccc'  spacing={[3, 4, 5]}>
                   <ListItem>
                     <Link>Home</Link>
                   </ListItem>
@@ -36,7 +36,7 @@ const Footer = () => {
             <Box>
                 <Heading size='md' marginBottom='20px'>Useful Links</Heading>
 
-                <List spacing={6}>
+                <List spacing={[3, 4, 5]}>
                   <ListItem color='#ccc' >
                   
                       Blogs
@@ -49,12 +49,12 @@ const Footer = () => {
             </Box>
 
             <Box>
-                <List spacing={6}>
+                <List spacing={[3, 4, 5]}>
                   <ListItem>
                     <Flex alignItems='center' gap='10px'>
-                    <ListIcon as={EmailIcon} color='#ccc' boxSize={7}/>
+                    <ListIcon as={EmailIcon} color='#ccc' boxSize={[4, 6, 7]}/>
                         <Box>
-                            <Heading as='h3' size='md'>Email:</Heading>
+                            <Heading as='h3' size={['10px', 'md', 'lg']}>Email:</Heading>
                             <Text color='#ccc' >support@inreglobal.com</Text>
                         </Box>
                     </Flex>
@@ -62,9 +62,9 @@ const Footer = () => {
 
                   <ListItem>
                     <Flex alignItems='center' gap='10px'>
-                    <ListIcon as={PhoneIcon} color='#ccc' boxSize={7}/>
+                    <ListIcon as={PhoneIcon} color='#ccc' boxSize={[4, 6, 7]}/>
                         <Box>
-                            <Heading as='h3' size='md'>Phone:</Heading>
+                            <Heading as='h3' size={['1px', 'md', 'lg']}>Phone:</Heading>
                             <Text color='#ccc' >+91 | 7019305889</Text>
                         </Box>
                     </Flex>
@@ -74,15 +74,15 @@ const Footer = () => {
             </Box>
         </Flex>
 
-        <Flex flexWrap='wrap' justifyContent='space-between' padding='40px 0 20px'>
+        <Flex flexWrap='wrap' justifyContent='space-between' fontSize={['12px', '14px', '16px']} padding='40px 0 20px'>
           <Text>Copyright 2023. Designed by INRE Global</Text>
-          <Flex gap='30px'>
+          <Flex gap={['10px', '20px', '30px']} mt='20px'>
           <Link href='https://chakra-ui.com' isExternal display='flex'  gap='20px'>
-              <AiOutlineLinkedin mx='10px' /> LinkedIn
+              <AiOutlineLinkedin /> LinkedIn
           </Link>
 
           <Link href='https://chakra-ui.com' display='flex'  gap='20px'>
-              <AiOutlineFacebook mx='10px' /> Facebook
+              <AiOutlineFacebook /> Facebook
           </Link>
 
           <Link href='https://chakra-ui.com' isExternal display='flex'  gap='20px'>
